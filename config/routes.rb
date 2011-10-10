@@ -1,4 +1,8 @@
 FirstApp::Application.routes.draw do
+  resources :microposts
+
+  resources :users   #resources automatically routes to _form, new, show, edit, create
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
