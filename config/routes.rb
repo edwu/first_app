@@ -1,4 +1,8 @@
 FirstApp::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/contact"
+
   resources :microposts
 
   resources :users   #resources automatically routes to _form, new, show, edit, create
