@@ -1,10 +1,9 @@
 FirstApp::Application.routes.draw do
-  get "pages/home"
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
 
-  get "pages/contact"
-
-  get "pages/about"
-
+  root :to => 'pages#home'
   resources :microposts
 
   resources :users   #resources automatically routes to _form, new, show, edit, create
