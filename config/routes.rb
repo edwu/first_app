@@ -1,15 +1,16 @@
 FirstApp::Application.routes.draw do
 
-  match '/signup',  :to => 'users#new'
-
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   root :to => 'pages#home'
 
   resources :users   #resources automatically routes to _form, new, show, edit, create
-
+  resources :sessions, :only => [:new, :create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
