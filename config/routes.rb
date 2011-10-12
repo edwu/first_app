@@ -1,5 +1,4 @@
 FirstApp::Application.routes.draw do
-  get "users/new"
 
   match '/signup',  :to => 'users#new'
 
@@ -8,7 +7,6 @@ FirstApp::Application.routes.draw do
   match '/help',    :to => 'pages#help'
 
   root :to => 'pages#home'
-  resources :microposts
 
   resources :users   #resources automatically routes to _form, new, show, edit, create
 
